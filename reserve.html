@@ -22,7 +22,7 @@
             <h2 class="text-center">Make your reservation</h2>
             <br>
             <div class="text-center">
-                <a href="/tables">
+                <a href="./tables.html">
                     <button class="btn btn-lg btn-primary">
                         <span class="fa fa-list-alt"></span> View Tables</button>
                 </a>
@@ -70,7 +70,7 @@
         <footer class="footer">
             <div class="container">
                 <p>
-                    <a href="/api/tables">API Table Link</a> |
+                    <a href="/api./tables.html">API Table Link</a> |
                     <a href="/api/waitlist">API Wait List</a>
                 </p>
             </div>
@@ -86,7 +86,7 @@
     <script type="text/javascript">
         // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
         // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-        // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+        // Our api recognizes the route (/api./tables.html)... and then runs the associated code (found in api-routes.js).
         // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
         $(".submit").on("click", function (event) {
@@ -107,7 +107,7 @@
             // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
             // depending on if a tables is available or not.
 
-            $.post("/api/tables", newReservation,
+            $.post("/api./tables.html", newReservation,
                 function (data) {
 
                     // If a table is available... tell user they are booked.
@@ -134,7 +134,7 @@
     <script type="text/javascript">
         // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
         // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-        // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+        // Our api recognizes the route (/api./tables.html)... and then runs the associated code (found in api-routes.js).
         // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
 
         $(".submit").on("click", function (event) {
@@ -155,7 +155,7 @@
             // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
             // depending on if a tables is available or not.
 
-            $.post("/api/tables", newReservation,
+            $.post("/api./tables.html", newReservation,
                 function (data) {
 
                     // If a table is available... tell user they are booked.
