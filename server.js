@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = 3000;
@@ -7,6 +8,23 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+let currentRes = [];
 
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'home.html')));
+
+app.get('/tables', (req, res) => res.sendFile(path.join(__dirname, 'tables.html')));
+
+app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.html')));
+
+app.post('/tables', (req, res) => {
+
+    const newReservation = req.body;
+
+    newReservation.routeName = newReservation.name.replace(/\s+/g, '').toLowerCase();
+    console.log(newReservation);
+  
+    currentRes.push(newReservation);
+    res.json(newReservation);
+  });
 
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
