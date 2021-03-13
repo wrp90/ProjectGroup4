@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 let currentRes = [];
+let pendingRes = [];
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'home.html')));
 
@@ -16,7 +17,11 @@ app.get('/tables', (req, res) => res.sendFile(path.join(__dirname, 'tables.html'
 
 app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.html')));
 
-app.post('/tables', (req, res) => {
+app.get('/api/currentRes', (req, res) => res.json(currentRes));
+
+app.get('/api/pendingRes', (req, res) => res.json(pendingRes));
+
+app.post('/api/currentRes', (req, res) => {
 
     const newReservation = req.body;
 
